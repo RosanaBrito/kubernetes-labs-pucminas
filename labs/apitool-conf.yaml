@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  MONGO_URI: mongodb://mongodb.default.svc:27017/my_database
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: apitool-conf

@@ -1,0 +1,54 @@
+apiVersion: v1
+data:
+  products.json: |-
+    {
+        "collection_name": "products",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "stock": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+            "required": [
+                "name",
+                "price"
+            ]
+        }
+    }
+  users.json: |-
+    {
+        "collection_name": "users",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "username": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "age": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+            "required": [
+                "username",
+                "email"
+            ]
+        }
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: apitool-schemas
